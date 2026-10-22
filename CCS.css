@@ -1,0 +1,609 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #6857d9;
+  --dark: #25243c;
+  --light: #f8f7fc;
+  --muted: #707588;
+  --green: #dff3e9;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 7%;
+  background: #fff;
+  border-bottom: 1px solid #eceaf4;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--purple);
+}
+
+nav {
+  display: flex;
+  gap: 23px;
+}
+
+nav a {
+  font-size: 13px;
+  font-weight: bold;
+  color: #565b6e;
+}
+
+nav a:hover,
+.card a:hover {
+  color: var(--purple);
+}
+
+#menuBtn {
+  display: none;
+  border: none;
+  background: transparent;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.hero {
+  max-width: 1150px;
+  margin: auto;
+  padding: 85px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  min-height: 510px;
+}
+
+.tag {
+  color: var(--purple);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.7px;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 5vw, 65px);
+  line-height: 1.12;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: var(--purple);
+}
+
+.hero-text > p:not(.tag) {
+  color: var(--muted);
+  max-width: 490px;
+  margin-bottom: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 19px;
+  border: none;
+  border-radius: 10px;
+  background: var(--purple);
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn:hover {
+  background: #5142bd;
+  transform: translateY(-2px);
+}
+
+.text-link {
+  display: inline-block;
+  margin-left: 15px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.hero-art {
+  min-height: 330px;
+  border-radius: 45% 55% 50% 40%;
+  background: linear-gradient(135deg, #e5e0ff, #dff3e9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.circle {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: white;
+  font-size: 85px;
+  box-shadow: 0 20px 50px #29254418;
+}
+
+.floating-card {
+  position: absolute;
+  top: 40px;
+  right: -10px;
+  background: white;
+  padding: 13px 16px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 8px 30px #25243c15;
+}
+
+.floating-card.second {
+  top: auto;
+  bottom: 35px;
+  right: auto;
+  left: -12px;
+}
+
+.college {
+  max-width: 1090px;
+  margin: 0 auto;
+  padding: 25px;
+  background: white;
+  border: 1px solid #e9e6f0;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.college-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: #efecff;
+  color: var(--purple);
+  border-radius: 15px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.college h2 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.college p:last-child {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.section {
+  max-width: 1150px;
+  margin: auto;
+  padding: 95px 30px;
+}
+
+.section h2,
+.campus-info h2 {
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.search {
+  width: 100%;
+  max-width: 400px;
+  padding: 13px 15px;
+  border: 1px solid #e2dfec;
+  border-radius: 10px;
+  margin: 25px 0;
+  outline-color: var(--purple);
+  background: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  padding: 25px;
+  background: white;
+  border: 1px solid #ece9f2;
+  border-radius: 18px;
+  transition: .2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #25243c0e;
+}
+
+.emoji {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #efecff;
+  border-radius: 14px;
+  font-size: 25px;
+  margin-bottom: 18px;
+}
+
+.card:nth-child(3n+2) .emoji {
+  background: #e1f6e9;
+}
+
+.card:nth-child(3n) .emoji {
+  background: #ffeddf;
+}
+
+.card h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.card a {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--purple);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.journey {
+  padding: 80px max(7%, 25px);
+  background: var(--dark);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.journey h2,
+.support h2 {
+  font-size: clamp(32px, 4vw, 45px);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.journey > div:first-child > p:not(.tag),
+.support > div > p:not(.tag) {
+  color: #c6c4d5;
+  font-size: 13px;
+}
+
+.progress {
+  max-width: 380px;
+  margin-top: 30px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.track {
+  height: 8px;
+  background: #4c4965;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progressBar {
+  width: 0;
+  height: 100%;
+  background: #9de1bc;
+  transition: width .2s;
+}
+
+.todo-panel {
+  padding: 28px;
+  border-radius: 18px;
+  background: white;
+  color: var(--dark);
+}
+
+.todo-panel h3 {
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+#todoForm {
+  display: flex;
+  gap: 8px;
+}
+
+#todoInput {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #e3e0ec;
+  border-radius: 9px;
+  outline-color: var(--purple);
+}
+
+.add-btn {
+  font-size: 22px;
+  padding: 5px 17px;
+}
+
+#todoList {
+  list-style: none;
+  margin: 15px 0;
+}
+
+#todoList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid #eeeaf3;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+#todoList li input {
+  accent-color: var(--purple);
+}
+
+#todoList li span {
+  flex: 1;
+}
+
+#todoList li.done span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: #b44;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.todo-panel small {
+  color: #8b8d9b;
+  font-size: 10px;
+}
+
+.campus-info {
+  padding-top: 85px;
+}
+
+.info-list {
+  margin-top: 25px;
+  border-top: 1px solid #e7e4ee;
+}
+
+.info-list > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 5px;
+  border-bottom: 1px solid #e7e4ee;
+}
+
+.info-list span {
+  color: var(--purple);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.info-list p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.info-list b {
+  color: var(--dark);
+}
+
+.support {
+  padding: 80px max(7%, 25px);
+  background: #302b58;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.support form {
+  padding: 28px;
+  border-radius: 18px;
+  background: white;
+  color: var(--dark);
+}
+.support form h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.support label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 12px 0 5px;
+}
+
+.support input,
+.support select,
+.support textarea {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #e1deeb;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  outline-color: var(--purple);
+}
+
+.support textarea {
+  resize: vertical;
+}
+
+.support form .btn {
+  width: 100%;
+  margin-top: 16px;
+}
+
+#formStatus {
+  color: #397f60;
+  font-size: 12px;
+  margin-top: 10px;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  background: #211f35;
+  color: #d0cede;
+  padding: 30px 20px;
+}
+
+footer .logo {
+  display: inline-block;
+  color: white;
+  margin-bottom: 10px;
+}
+
+footer p,
+footer small {
+  font-size: 11px;
+}
+
+@media (max-width: 800px) {
+  header {
+    padding: 14px 20px;
+  }
+
+  #menuBtn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 12px;
+    right: 12px;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px #25243c20;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 11px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 60px 24px;
+  }
+
+  .hero-art {
+    min-height: 280px;
+    margin: 10px 5px;
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+    font-size: 65px;
+  }
+
+  .college {
+    margin: 0 18px;
+    padding: 18px;
+  }
+
+  .college h2 {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 65px 22px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey,
+  .support {
+    grid-template-columns: 1fr;
+    padding: 65px 22px;
+    gap: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
